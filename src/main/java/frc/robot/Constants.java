@@ -85,10 +85,10 @@ public final class Constants {
         public static final double driveKF = 0.0;
 
          /* Heading PID Values */
-        public static final double HeadingKP = 0.5;
-        public static final double HeadingKI = 0.0;
-        public static final double HeadingKD = 0;
-        public static final double HeadingTolerence = 0;
+        public static final double HeadingKP = ConciseConstants.HeadingKP;
+        public static final double HeadingKI = ConciseConstants.HeadingKI;
+        public static final double HeadingKD = ConciseConstants.HeadingKD;
+        public static final double HeadingTolerence = ConciseConstants.HeadingTolerence;
 
         //Motor power gain
         public static final double drivePower = 1;
@@ -157,14 +157,14 @@ public final class Constants {
     }
 
     public static final class AutoConstants { 
-            //TODO: The below constants are used in the 
+            // The below constants are used in the 
             //example auto, and must be tuned to specific robot
         public static final double kMaxSpeedMetersPerSecond = 1;
         public static final double kMaxAccelerationMetersPerSecondSquared = 1;
         public static final double kMaxAngularSpeedRadiansPerSecond = 1;
         public static final double kMaxAngularSpeedRadiansPerSecondSquared = 1;
 
-        //TODO: Must be tuned to specific robot
+        // Must be tuned to specific robot
         public static final PIDConstants translationPID = new PIDConstants(0, 0, 0);
         public static final PIDConstants rotationPID = new PIDConstants(0, 0, 0);
 
