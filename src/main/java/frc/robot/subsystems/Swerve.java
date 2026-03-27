@@ -8,7 +8,8 @@ import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 
-import com.ctre.phoenix.sensors.PigeonIMU;
+import com.ctre.phoenix6.configs.Pigeon2Configuration;
+import com.ctre.phoenix6.hardware.Pigeon2;
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.config.RobotConfig;
 import com.pathplanner.lib.controllers.PPHolonomicDriveController;
@@ -28,7 +29,7 @@ public class Swerve extends SubsystemBase {
 
     public SwerveDriveOdometry swerveOdometry;
     public SwerveMod[] mSwerveMods;
-    public PigeonIMU gyro;
+    public Pigeon2 gyro;
     public RobotConfig config;
     private Field2d field = new Field2d();
 
@@ -41,9 +42,24 @@ public class Swerve extends SubsystemBase {
           Constants.AutoConstants.moduleConfig,
           Constants.Swerve.trackWidth);
 
-        gyro = new PigeonIMU(Constants.Swerve.pigeonID);
-        gyro.configFactoryDefault();
-        gyro.setYaw(0);
+        gyro = new  Pigeon2(Constants.Swerve.pigeonID);
+            // Configure the Pigeon2 for basic use
+        Pigeon2Configuration configs = new Pigeon2Configuration();
+            // This Pigeon is mounted X-up, so we should mount-pose with Pitch at 90 degrees
+        configs.MountPose.MountPoseYaw = 0; 
+        configs.MountPose.MountPosePitch = 90;
+        configs.MountPose.MountPoseRoll = 0;
+            // This Pigeon has no need to trim the gyro
+        configs.GyroTrim.GyroScalarX = 0;
+        configs.GyroTrim.GyroScalarY = 0;
+        configs.GyroTrim.GyroScalarZ = 0;
+            // We want the thermal comp and no-motion cal enabled, with the compass disabled for best behavior
+        configs.Pigeon2Features.DisableNoMotionCalibration = false;
+        configs.Pigeon2Features.DisableTemperatureCompensation = false;
+        configs.Pigeon2Features.EnableCompass = false;
+            
+            // Write these configs to the Pigeon2
+        gyro.getConfigurator().apply(configs);
 
         mSwerveMods = new SwerveMod[] {
             new SwerveMod(0, Constants.Swerve.Mod0.constants),
@@ -156,7 +172,8 @@ public class Swerve extends SubsystemBase {
     }
 
     public Rotation2d getGyroYaw() {
-        return Rotation2d.fromDegrees(gyro.getYaw());
+        double Yaw = gyro.getYaw(); // TODO: Fix error of Yaw being in StatusSignal?
+        return Rotation2d.fromDegrees(Yaw);
     }
 
     public void setHeading(Rotation2d heading){
