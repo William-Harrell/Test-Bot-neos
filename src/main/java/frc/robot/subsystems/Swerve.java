@@ -172,7 +172,7 @@ public class Swerve extends SubsystemBase {
     }
 
     public Rotation2d getGyroYaw() {
-        double Yaw = gyro.getYaw(); // TODO: Fix error of Yaw being in StatusSignal?
+        double Yaw = gyro.getYaw().getValueAsDouble(); 
         return Rotation2d.fromDegrees(Yaw);
     }
 
