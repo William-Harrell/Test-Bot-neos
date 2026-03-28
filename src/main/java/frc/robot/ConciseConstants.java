@@ -5,8 +5,8 @@ package frc.robot;
 public class ConciseConstants {
     // General Constants
         
-        public static final double MaxSpeed = 3.0; // meters per second
-        public static final double MaxAngularSpeed = 10.0; // radians per second
+        public static final double MaxSpeed = 1.0; // meters per second
+        public static final double MaxAngularSpeed = 3.0; // radians per second
 
 
     // Weird Constants
@@ -27,10 +27,10 @@ public class ConciseConstants {
 
     // Physical Constants
 
-        public static final double BaseLeftRight = 0.0; 
+        public static final double BaseLeftRight = 19.0; 
         // inches, Center to Center distance of left and right modules.
         
-        public static final double BaseFrontRear = 0.0; 
+        public static final double BaseFrontRear = 19.0; 
         // inches, Center to Center distance of front and rear module wheels.
 
         public static final double RobotWeight = 0.0; //in kg
