@@ -42,30 +42,30 @@ public class ConciseConstants {
     // (Double check if the offset is in degrees or rotations: expecting rotations)
 
         // Pigeon:
-        public static final int PigeonID = 0; // Double check if pigeon is 1.0 or 2.0
+        public static final int PigeonID = 10; // Double check if pigeon is 1.0 or 2.0
         public static final boolean InvertPigeon = false; // Always ensure Gyro is CCW+ CW-
 
         // Front Left Module
-        public static final int FLDriveMotorId = 0;
-        public static final int FLSteerMotorId = 0;
-        public static final int FLCANCoderId = 0;
+        public static final int FLDriveMotorId = 5;
+        public static final int FLSteerMotorId = 6;
+        public static final int FLCANCoderId = 1;
         public static final double FLCanCoderOffset = 0.0;
 
         // Front Right Module
-        public static final int FRDriveMotorId = 0;
-        public static final int FRSteerMotorId = 0;
-        public static final int FRCANCoderId = 0;
+        public static final int FRDriveMotorId = 1;
+        public static final int FRSteerMotorId = 2;
+        public static final int FRCANCoderId = 2;
         public static final double FRCanCoderOffset = 0.0;
 
         // Back Left Module
-        public static final int BLDriveMotorId = 0;
-        public static final int BLSteerMotorId = 0;
-        public static final int BLCANCoderId = 0;
+        public static final int BLDriveMotorId = 7;
+        public static final int BLSteerMotorId = 8;
+        public static final int BLCANCoderId = 3;
         public static final double BLCanCoderOffset = 0.0;
         // Back Right Module
-        public static final int BRDriveMotorId = 0;
-        public static final int BRSteerMotorId = 0;
-        public static final int BRCANCoderId = 0;
+        public static final int BRDriveMotorId = 3;
+        public static final int BRSteerMotorId = 4;
+        public static final int BRCANCoderId = 4;
         public static final double BRCanCoderOffset = 0.0;
 }
 
