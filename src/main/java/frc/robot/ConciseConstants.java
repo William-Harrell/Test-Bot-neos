@@ -5,8 +5,8 @@ package frc.robot;
 public class ConciseConstants {
     // General Constants
         
-        public static final double MaxSpeed = 0.2; // meters per second
-        public static final double MaxAngularSpeed = 0.5; // radians per second
+        public static final double MaxSpeed = 5.0; // meters per second
+        public static final double MaxAngularSpeed = 10.0; // radians per second
 
 
     // Weird Constants
