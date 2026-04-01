@@ -5,8 +5,8 @@ package frc.robot;
 public class ConciseConstants {
     // General Constants
         
-        public static final double MaxSpeed = 1.0; // meters per second
-        public static final double MaxAngularSpeed = 3.0; // radians per second
+        public static final double MaxSpeed = 0.2; // meters per second
+        public static final double MaxAngularSpeed = 0.5; // radians per second
 
 
     // Weird Constants
@@ -48,24 +48,25 @@ public class ConciseConstants {
         // Front Left Module
         public static final int FLDriveMotorId = 5;
         public static final int FLSteerMotorId = 6;
-        public static final int FLCANCoderId = 1;
-        public static final double FLCanCoderOffset = 0.0;
+        public static final int FLCANCoderId = 11;
+        public static final double FLCanCoderOffset = -0.198242;
 
         // Front Right Module
         public static final int FRDriveMotorId = 1;
         public static final int FRSteerMotorId = 2;
-        public static final int FRCANCoderId = 2;
-        public static final double FRCanCoderOffset = 0.0;
+        public static final int FRCANCoderId = 12;
+        public static final double FRCanCoderOffset = -0.242188;
 
         // Back Left Module
         public static final int BLDriveMotorId = 7;
         public static final int BLSteerMotorId = 8;
-        public static final int BLCANCoderId = 3;
-        public static final double BLCanCoderOffset = 0.0;
+        public static final int BLCANCoderId = 13;
+        public static final double BLCanCoderOffset = -0.210938;        
+        
         // Back Right Module
         public static final int BRDriveMotorId = 3;
         public static final int BRSteerMotorId = 4;
-        public static final int BRCANCoderId = 4;
-        public static final double BRCanCoderOffset = 0.0;
+        public static final int BRCANCoderId = 14;
+        public static final double BRCanCoderOffset = -0.224121;
 }
 

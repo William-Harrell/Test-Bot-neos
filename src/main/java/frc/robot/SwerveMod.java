@@ -43,7 +43,7 @@ public class SwerveMod{
         this.angleOffset = moduleConstants.angleOffset;
         
          /* Angle Encoder Config */
-        angleEncoder = new CANcoder(moduleConstants.cancoderID, "rio");
+        angleEncoder = new CANcoder(moduleConstants.cancoderID);
 
         /* Angle Motor Config */
         mAngleMotor = new SparkMax(moduleConstants.angleMotorID, MotorType.kBrushless);

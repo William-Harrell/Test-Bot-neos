@@ -47,7 +47,7 @@ public class Swerve extends SubsystemBase {
         Pigeon2Configuration configs = new Pigeon2Configuration();
             // This Pigeon is mounted X-up, so we should mount-pose with Pitch at 90 degrees
         configs.MountPose.MountPoseYaw = 0; 
-        configs.MountPose.MountPosePitch = 90;
+        configs.MountPose.MountPosePitch = 0;
         configs.MountPose.MountPoseRoll = 0;
             // This Pigeon has no need to trim the gyro
         configs.GyroTrim.GyroScalarX = 0;
